@@ -1,5 +1,7 @@
 import React from "react"
 import Header from "./components/header"
+import Image from "./components/image"
+import logo from "./img/3147aa77.png"
 // import * as ReactDOMClient from 'react-dom/client'
 // Старый вариант предыдущих версий REACT
 
@@ -17,6 +19,7 @@ import Header from "./components/header"
 // const mouseOver = () => console.log("Mouse Over")
 
 // const helpText = "Help text???"
+
 
 // функция в новом стиле
 // const App = () =>{
@@ -40,6 +43,8 @@ class App extends React.Component {
             <input placeholder={this.helpText}
                 onClick={this.inputClick} onMouseEnter={this.mouseOver} />
             <p>{this.helpText === "Help text???" ? "Yes" : "No"}</p>
+            <Image image={logo}/>
+            <img src={logo} alt=""></img>
         </div>)
 
     }
