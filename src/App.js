@@ -42,8 +42,13 @@ class App extends React.Component {
         this.inputClick = this.inputClick.bind(this)//регистрация метода для своих событий
 
     }
+    componentDidUpdate(prevProp){//hook componentDidUpdate для классов,
+        if(this.state.helpText !== "Help")// отрабатывает принажатии на конслоль при условии
+            console.log("Somebody")
 
-    helpText = "Help text???"
+    }
+
+    // helpText = "Help text???"
     render() {
         return (<div className="name" >
             <Header title="Site header"></Header>
@@ -60,10 +65,10 @@ class App extends React.Component {
         </div>)
 
     }
-    inputClick() {
+    inputClick() { //метод при нажатии на поля ввода
         this.setState({helpText: "Changed"})
         console.log("Clicked")
     }
-    mouseOver() { console.log("Mouse Over") }
+    mouseOver() { console.log("Mouse Over") } //метод при наведении на поля ввода
 }
 export default App
