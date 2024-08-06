@@ -39,7 +39,7 @@ class App extends React.Component {
             helpText: "Help text",
             userData: ""
         }
-        this.inputClick = this.inputClick.bind(this)
+        this.inputClick = this.inputClick.bind(this)//регистрация метода для своих событий
 
     }
 
