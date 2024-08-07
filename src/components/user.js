@@ -1,8 +1,14 @@
 import React from "react";
 import { IoCloseCircleSharp, IoHammerSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
+import AddUser from "./AddUser";
 
 class User extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            editForm: false
+        }}
     render() {
         const { user, onDelete } = this.props;
 
@@ -17,14 +23,20 @@ class User extends React.Component {
                         </div>
                         <div className="action-icons">
                             <FaRegHeart className="like-icon" />
-                            <IoHammerSharp className="edit-icon" />
+                            <IoHammerSharp className="edit-icon" onClick={()=>{
+                                this.setState({
+                                    editForm: !this.state.editForm
+                                })
+                            }} />
                             <IoCloseCircleSharp
                                 className="delete-icon"
                                 onClick={() => onDelete(user.id)}
                             />
+                            
                         </div>
                     </li>
                 </ul>
+                {this.state.editForm && <AddUser></AddUser> }
             </div>
         );
     }
