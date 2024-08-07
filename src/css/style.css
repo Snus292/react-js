@@ -33,12 +33,12 @@ body {
 }
 main{
     
-    width: 70%;
+    width: 60%;
     float: left;
     height:100%;
 }
 aside{
-    width: 30%;
+    width: 40%;
     float: left;
     height:100%;
     
@@ -81,10 +81,10 @@ main .like-icon:hover{
     opacity: 0.5;
     transform: scale(2.5);
 }
-aside form input, aside form textarea, aside form button{
+form input, form textarea, form button{
     display: block;
-    width: 80%;
-    padding: 5% 5%;
+    width: 70%;
+    padding: 4% 7%;
     margin: 4% 2%;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
@@ -94,10 +94,30 @@ aside form input, aside form textarea, aside form button{
     
         
 }
-aside form button{
+form button{
     margin-top: 10%;
+    background-color: #5a5a5a;
+    width: 60%;
+
 }
-aside form button:hover{
+form button:hover{
     transform: scale(1.1);
     transition: all 0.2s ease-in-out;
+    opacity: 0.6;
+}
+.user form{
+    margin-top: 5%;
+    width: 60%;
+    display: block;
+    
+}
+
+.user form input, .user form textarea, .user form button{
+    background-color: #94949431;
+    padding: 3% 7%;
+}
+.user form button{
+    width: 60%;
+    background-color: #949494;
+    
 }
