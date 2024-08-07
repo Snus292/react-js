@@ -10,7 +10,7 @@ class User extends React.Component {
             editForm: false
         }}
     render() {
-        const { user, onDelete } = this.props;
+        const { user, onDelete, onEdit } = this.props;
 
         return (
             <div className="user">
@@ -36,7 +36,7 @@ class User extends React.Component {
                         </div>
                     </li>
                 </ul>
-                {this.state.editForm && <AddUser></AddUser> }
+                {this.state.editForm && <AddUser onAdd={onEdit}></AddUser> }
             </div>
         );
     }

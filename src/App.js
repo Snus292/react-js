@@ -46,6 +46,7 @@ class App extends React.Component {
         }
         this.addUser = this.addUser.bind(this)
         this.deleteUser = this.deleteUser.bind(this)
+        this.editUser = this.editUser.bind(this)
     }
     render() {
         return (<div>
@@ -56,7 +57,7 @@ class App extends React.Component {
 
                 </aside>
                 <main>
-                    <Users users={this.state.users} onDelete={this.deleteUser}></Users>
+                    <Users users={this.state.users} onDelete={this.deleteUser} onEdit={this.editUser}></Users>
                 </main>
             </div>
 
@@ -80,6 +81,9 @@ class App extends React.Component {
         })
 
 
+    }
+    editUser(user){
+        console.log(user)
     }
 
 }
