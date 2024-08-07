@@ -41,6 +41,7 @@ aside{
     width: 30%;
     float: left;
     height:100%;
+    
 }
 main .user{
     margin-bottom: 50px;
@@ -81,13 +82,22 @@ main .like-icon:hover{
     transform: scale(2.5);
 }
 aside form input, aside form textarea, aside form button{
+    display: block;
     width: 80%;
     padding: 5% 5%;
-    margin: 2% 2%;
+    margin: 4% 2%;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     font-size: 15px;
-    background-color: #b4b4b4;
+    background-color: #949494;
+    transform: scale(1);
     
-    
+        
+}
+aside form button{
+    margin-top: 10%;
+}
+aside form button:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
