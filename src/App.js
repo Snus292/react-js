@@ -1,7 +1,7 @@
 import React from "react"
-import Header from "./components/header"
-import Users from "./components/users"
-import AddUser from "./components/addUser"
+import Header from "./components/Header"
+import Users from "./components/Users"
+import AddUser from "./components/AddUser"
 
 
 
@@ -45,28 +45,42 @@ class App extends React.Component {
             ]
         }
         this.addUser = this.addUser.bind(this)
+        this.deleteUser = this.deleteUser.bind(this)
     }
     render() {
         return (<div>
             <Header title="User list"></Header>
             <div className="container">
                 <aside>
-                    <AddUser onAdd={this.addUser}></AddUser>
+                    <AddUser onAdd={this.addUser} ></AddUser>
 
                 </aside>
                 <main>
-                    <Users users={this.state.users}></Users>
+                    <Users users={this.state.users} onDelete={this.deleteUser}></Users>
                 </main>
             </div>
 
         </div>)
     }
 
-    addUser(user){
+
+    addUser(user) {
         const id = this.state.users.length + 1
-        this.setState({users: [...this.state.users, {id, ...user}] })
-        // this.setState
-        
+        this.setState({ 
+            users: [...this.state.users, { id, ...user }] 
+        })//обращение ко всему текущему списку и добавления id
+        //и обьекта user(введенные данные)
+
     }
+    deleteUser(id) {
+        this.setState({
+            users: this.state.users.filter((el) => el.id !== id)//JS метод filter() для перебора массива, все элементы не 
+            //подходящие под условие будут удалены
+            //берем все id несовпадающие с параметром
+        })
+
+
+    }
+
 }
 export default App

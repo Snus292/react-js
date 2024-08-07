@@ -1,29 +1,25 @@
-import React from "react"
-import User from "./user"
+import React from "react";
+import User from "./User";
+
 
 class Users extends React.Component {
-    
     render() {
-        
-        if (this.props.users.length > 0)
-            return (
-                <div>
-                    {this.props.users.map((element) => (
-                        <User key={element.id} user={element}></User>
-                    ))}
-                </div>
-            )
-        else
-            return (
-                <div className="user">
-                    <h3>There is not any users</h3>
+        const { users, onDelete } = this.props;
 
-                </div>
-
-            )
-
+        return (
+            <div>
+                {users.length > 0 ? (
+                    users.map((user) => (
+                        <User key={user.id} user={user} onDelete={onDelete} />
+                    ))
+                ) : (
+                    <div className="user">
+                        <h3>There are no users</h3>
+                    </div>
+                )}
+            </div>
+        );
     }
-
-
 }
-export default Users
+
+export default Users;
