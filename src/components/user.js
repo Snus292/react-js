@@ -17,9 +17,10 @@ class User extends React.Component {
                 <ul>
                     <li>
                         <div>
+                            <h5>{user.first_name} {user.last_name}</h5>
                             <h3>{user.title} ({user.releaseYear})</h3>
                             <p>{user.plot}</p>
-                            <b>{user.genres.length < 2 ? "Specific genre" : "Multi-genre"}</b>
+                            {/* <b>{user.genres.length  < 2 ? "Specific genre" : "Multi-genre"}</b> */}
                         </div>
                         <div className="action-icons">
                             <FaRegHeart className="like-icon" />
@@ -30,13 +31,12 @@ class User extends React.Component {
                             }} />
                             <IoCloseCircleSharp
                                 className="delete-icon"
-                                onClick={() => onDelete(user.id)}
-                            />
+                                onClick={() => onDelete(user.id)}/>
                             
                         </div>
                     </li>
                 </ul>
-                {this.state.editForm && <AddUser onAdd={onEdit}></AddUser> }
+                {this.state.editForm && <AddUser user={this.props.user} onAdd={onEdit}></AddUser> }
             </div>
         );
     }
