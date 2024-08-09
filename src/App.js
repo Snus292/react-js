@@ -1,31 +1,32 @@
 import React from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Users from "./components/Users";
 import AddUser from "./components/AddUser";
 import axios from "axios";
 
-const baseUrl = "https://reqres.in/api/users?page=1"   
+const baseUrl = "https://reqres.in/api/users?page=1"
 
 class App extends React.Component {
     constructor(props) {
         super(props)
 
-        axios.get(baseUrl).then((res)=>{
-            this.setState({users: res.data.data})
+        axios.get(baseUrl).then((res) => {
+            this.setState({ users: res.data.data })
         })
 
         this.state = {
             users: []
         }
 
-        
+
         this.addUser = this.addUser.bind(this)
         this.deleteUser = this.deleteUser.bind(this)
         this.editUser = this.editUser.bind(this)
     }
     render() {
         return (<div>
-            <Header title="User list"></Header>
+            <Header title="wrapper"></Header>
             <div className="container">
                 <aside>
                     <AddUser onAdd={this.addUser} ></AddUser>
@@ -35,6 +36,7 @@ class App extends React.Component {
                     <Users users={this.state.users} onDelete={this.deleteUser} onEdit={this.editUser}></Users>
                 </main>
             </div>
+            <Footer title="User list"></Footer>
 
         </div>)
     }
@@ -42,8 +44,8 @@ class App extends React.Component {
 
     addUser(user) {
         const id = this.state.users.length + 1
-        this.setState({ 
-            users: [...this.state.users, { id, ...user }] 
+        this.setState({
+            users: [...this.state.users, { id, ...user }]
         })//обращение ко всему текущему списку и добавления id
         //и обьекта user(введенные данные)
 
@@ -57,12 +59,12 @@ class App extends React.Component {
 
 
     }
-    editUser(user){
+    editUser(user) {
         let allUsers = this.state.users
         allUsers[user.id - 1] = user
 
-        this.setState({users: []},()=>{
-            this.setState({users:[...allUsers]})
+        this.setState({ users: [] }, () => {
+            this.setState({ users: [...allUsers] })
         })
     }
 

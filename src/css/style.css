@@ -15,12 +15,14 @@ body {
     
 }
 .container{
-    height: 1000px;
+    
     margin: 5% 0%;
     margin-right: 5%;
 }
 
-.header {
+.header, .footer {
+    display: flex;
+    position: relative;
     background-color: black;
     color: azure;
     font-family: "Montserrat", sans-serif;
@@ -30,6 +32,10 @@ body {
     padding: 5%;
 
 
+}
+header .presentation{
+    background: url();
+    background-size: cover;
 }
 main{
     
