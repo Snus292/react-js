@@ -17,11 +17,11 @@ class User extends React.Component {
                 <ul>
                     <li>
                         <div>
-                            <h5>{user.first_name} {user.last_name}</h5>
+                            <h3>{user.first_name} {user.last_name}</h3>
                             <img src={user.avatar} alt=""></img>
-                            <h3>{user.email}</h3>
-                            <h3>({user.releaseYear})</h3>
-                            <p>{user.plot}</p>
+                            <h5>{user.email}</h5>
+                            {/* <h3>({user.releaseYear})</h3>
+                            <p>{user.plot}</p> */}
                             {/* <b>{user.genres.length  < 2 ? "Specific genre" : "Multi-genre"}</b> */}
                         </div>
                         <div className="action-icons">
