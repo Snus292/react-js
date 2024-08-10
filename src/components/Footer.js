@@ -4,12 +4,18 @@ class Footer extends React.Component {
     render() {
         return (
             <footer className="footer">
-                <h1>
-                    {this.props.title}
-                </h1>
-                <p>&copy; All user rights reserved</p>
+                <div>
+                    <p>&copy; All user rights reserved</p>
+                </div>
 
-            </footer>
+
+                <div>
+                    <h1>
+                        {this.props.title}
+                    </h1>
+
+                </div>
+            </footer >
         )
     }
 
