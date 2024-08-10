@@ -30,13 +30,36 @@ body {
     font-weight: 600;
     font-style: normal;
     padding: 5%;
+    justify-content: space-between;
 
 
 }
 header .presentation{
-    background: url();
+    
     background-size: cover;
+    background-position: center,center;
+    background-blend-mode: multiply;
+    background-color:rgb(195, 241, 241);
 }
+
+header .nav ul{
+    float: right;
+    list-style: none;
+}
+
+header .nav ul li{
+    display: inline;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 200ms ease-in;
+
+}
+header .nav ul li:hover{
+    opacity: 0.5;
+
+}
+
+
 main{
     
     width: 60%;

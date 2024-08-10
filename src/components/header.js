@@ -9,6 +9,13 @@ class Header extends React.Component {
                         {this.props.title}
                     </h1>
                 </div>
+                <div className="nav">
+                    <ul>
+                        <li>Account</li>
+                        <li>Abount us</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
 
             </header>
         )

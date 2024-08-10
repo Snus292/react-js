@@ -26,7 +26,7 @@ class App extends React.Component {
     }
     render() {
         return (<div>
-            <Header title="wrapper"></Header>
+            <Header></Header>
             <div className="container">
                 <aside>
                     <AddUser onAdd={this.addUser} ></AddUser>
@@ -36,7 +36,7 @@ class App extends React.Component {
                     <Users users={this.state.users} onDelete={this.deleteUser} onEdit={this.editUser}></Users>
                 </main>
             </div>
-            <Footer title="User list"></Footer>
+            <Footer></Footer>
 
         </div>)
     }
