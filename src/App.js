@@ -73,7 +73,7 @@ class App extends React.Component {
         this.editUser = this.editUser.bind(this)
     }
     render() {
-        return (<div>
+        return (<div className="page-wrapper">
             <Header></Header>
             <div className="container">
                 <aside>
