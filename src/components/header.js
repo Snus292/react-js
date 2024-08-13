@@ -1,8 +1,19 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineHexagon } from "react-icons/md";
-
+import { FaRegHeart } from "react-icons/fa";
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cartOpen: false // Инициализация состояния
+        };
+    }
+    toggleCart = () => {
+        this.setState((prevState) => ({
+            cartOpen: !prevState.cartOpen
+        }));
+    };
     render() {
         return (
             <header className="header">
@@ -27,9 +38,29 @@ class Header extends React.Component {
                         <button type="button" class="btn btn-outline-light me-2">Login</button>
                         <button type="button" class="btn btn-warning">Sign-up</button>
 
-                        <FaShoppingCart className="shop-cart-button"></FaShoppingCart>
 
                     </div>
+                    <div class="account-nav">
+                        <a href="#" class="nav-link text-secondary">
+                            <FaShoppingCart
+                                onClick={this.toggleCart}
+                                className={`account-button ${this.state.cartOpen ? "active" : ""}`} />
+
+
+                        </a>
+                        <a href="#" class="nav-link text-secondary">
+                            <FaRegHeart className="account-button"> </FaRegHeart>
+                        </a>
+                        <a href="#" class="nav-link text-secondary">
+                            <FaRegHeart className="account-button"> </FaRegHeart>
+                        </a>
+
+                    </div>
+                    {this.state.cartOpen && (
+                        <div className="shop-cart">
+
+                        </div>
+                    )}
                 </div>
 
             </header>

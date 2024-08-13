@@ -58,13 +58,17 @@ header .presentation {
     background-color: rgb(195, 241, 241);
 }
 
+
 header .nav {
     display: flex;
     float: left;
     margin-left: auto;
     margin-right: 5%;
 }
-
+header .logo{
+    width: 64px;
+    height: 64px;
+}
 header .header-links {
     margin-right: 5%;
     float: right;
@@ -87,16 +91,41 @@ header .nav ul li:hover {
     opacity: 0.5;
 
 }
+.account-nav{
+    display: flex;
+}
+.account-nav{
+    
+    margin: 0 5%;
+}
+.account-nav .nav-link{
+    padding: 10px;
+}
 
-header .shop-cart-button {
+
+
+.account-nav .account-button {
+    width: 30px;
+    height: 30px;
     float: right;
     cursor: pointer;
     transition: color 300ms ease;
 }
 
-header .shop-cart-button:hover,
-header .shop-cart-button.active {
-    color: #949494;
+.account-nav .account-button:hover,
+.account-nav .account-button.active {
+    color: #ff0000;
+    transform: scale(1.2);
+}
+header .shop-cart{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 450px;
+    min-height:100px;
+    background-color: #525252;
+    box-shadow:3px 7px 7px rgb(0, 0, 0);
+    z-index: 100;
 }
 
 
