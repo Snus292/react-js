@@ -75,7 +75,7 @@ class App extends React.Component {
     }
     render() {
         return (<div className="page-wrapper">
-            <Header></Header>
+            <Header orders={this.state.orders}></Header>
             <div className="container">
                 <aside>
                     <AddUser onAdd={this.addUser} ></AddUser>

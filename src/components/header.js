@@ -2,6 +2,7 @@ import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineHexagon } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
+import Order from "./Order";
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -58,6 +59,9 @@ class Header extends React.Component {
                     </div>
                     {this.state.cartOpen && (
                         <div className="shop-cart">
+                            {this.props.orders.map(el=>(
+                                <Order key={el.id} item={el}></Order>
+                            ))}
 
                         </div>
                     )}
