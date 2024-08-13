@@ -3,12 +3,12 @@ import Item from "./Item";
 
 class Items extends React.Component {
     render() {
-        const {items} =this.props;
+        const {items ,onAddToOrder} =this.props;
         return (
             <div className="items">
                 {items.length > 0 ? (
                     items.map((item) => (
-                        <Item key={item.id} item={item} />
+                        <Item key={item.id} item={item} onAddToOrder={onAddToOrder} />
                     ))
                 ) : (
                     <div className="item">

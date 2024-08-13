@@ -18,10 +18,10 @@ class App extends React.Component {
         })
 
         this.state = {
-            users: []
-        }
+            orders:[],
 
-        this.state = {
+            users:[],
+
             items: [
                 {
                     id: 1,
@@ -71,6 +71,7 @@ class App extends React.Component {
         this.addUser = this.addUser.bind(this)
         this.deleteUser = this.deleteUser.bind(this)
         this.editUser = this.editUser.bind(this)
+        this.addToOrder = this.addToOrder.bind(this)
     }
     render() {
         return (<div className="page-wrapper">
@@ -86,7 +87,7 @@ class App extends React.Component {
                     </div>
 
                     <div>
-                        <Items items={this.state.items}></Items>
+                        <Items items={this.state.items} onAddToOrder={this.addToOrder}></Items>
 
 
                     </div>
@@ -95,6 +96,12 @@ class App extends React.Component {
             <Footer></Footer>
 
         </div>)
+    }
+    addToOrder(item){
+        this.setState({orders:[...this.state.orders, item]},()=>{
+            console.log(this.state.orders)
+        })
+
     }
 
 
