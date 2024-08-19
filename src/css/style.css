@@ -171,6 +171,15 @@ header .shop-cart .item .delete-item:hover{
     color: #ff0000df;
     transform: scale(1.2);
 }
+
+header .shop-cart .subtotal{
+    float: left;
+    width: 100%;
+    font-weight: 700;
+    margin-top: 5%;
+    font-size: large;
+
+}
 /* header .shop-cart .empty h4{
     
 } */

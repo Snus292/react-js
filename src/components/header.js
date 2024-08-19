@@ -36,11 +36,17 @@ class Header extends React.Component {
     }
 
     showOrders() {
+        let subtotal = 0
+        this.props.orders.forEach(el => subtotal += Number.parseFloat(el.price))
         return (
             <div>
                 {this.props.orders.map((el) => (
                     <Order key={el.id} item={el} onDeleteOrder={this.props.onDeleteOrder} />
                 ))}
+                <div className="subtotal d-flex justify-content-between align-items-baseline"> 
+                    <span>Subtotal:</span>
+                    <span>{new Intl.NumberFormat().format(subtotal)}$</span>
+                </div>
             </div>
         );
     }
