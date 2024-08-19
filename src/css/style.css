@@ -157,6 +157,9 @@ header .shop-cart .item h2{
     margin-left: 5%;
     width: 25%;
 }
+header .shop-cart .empty h3{
+    
+}
 
 
 main {

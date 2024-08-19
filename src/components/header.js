@@ -3,18 +3,58 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineHexagon } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import Order from "./Order";
+
+//       Вариант с оставление методов вне класса Header 
+// const showOrders = (props) => {
+//     return (<div>
+//         {props.orders.map(el => (
+//             <Order key={el.id} item={el}></Order>
+//         ))}
+
+
+//     </div>)
+// }
+
+// const showNothing = (props) => {
+//     return (<div className="empty">
+//         <h4>There are not any products</h4>
+
+//     </div>)
+// }
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             cartOpen: false // Инициализация состояния
-        };
+        }
     }
     toggleCart = () => {
         this.setState((prevState) => ({
             cartOpen: !prevState.cartOpen
-        }));
-    };
+        }))
+    }
+
+    showOrders() {
+        return (
+            <div>
+                {this.props.orders.map((el) => (
+                    <Order key={el.id} item={el} />
+                ))}
+            </div>
+        );
+    }
+
+    showNothing() {
+        return (
+            <div className="empty">
+                <h4>There are no products</h4>
+            </div>
+        );
+    }
+
+    
+
     render() {
         return (
             <header className="header">
@@ -45,7 +85,7 @@ class Header extends React.Component {
                         <a href="#" className="nav-link text-secondary">
                             <FaShoppingCart
                                 onClick={this.toggleCart}
-                                className={`account-button ${this.state.cartOpen ? "active" : ""}`}/>
+                                className={`account-button ${this.state.cartOpen ? "active" : ""}`} />
 
 
                         </a>
@@ -59,9 +99,9 @@ class Header extends React.Component {
                     </div>
                     {this.state.cartOpen && (
                         <div className="shop-cart">
-                            {this.props.orders.map(el=>(
-                                <Order key={el.id} item={el}></Order>
-                            ))}
+                            {this.props.orders.length > 0 ?
+                                this.showOrders() : this.showNothing()}
+
 
                         </div>
                     )}
