@@ -31,7 +31,7 @@ body {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
-    padding: 30px;
+    padding: 25px;
     font-style: normal;
     justify-content: flex-start;
     width: 100%;
@@ -63,7 +63,7 @@ header .nav {
     display: flex;
     float: left;
     margin-left: auto;
-    margin-right: 5%;
+    
 }
 header .logo{
     width: 64px;
@@ -121,32 +121,42 @@ header .shop-cart{
     position: absolute;
     top: 100%;
     right: 0;
-    width: 450px;
+    width: 30%;
     min-height:100px;
     background-color: #525252;
     box-shadow:3px 7px 7px rgb(0, 0, 0);
     z-index: 100;
+    padding: 20px;
+    min-width: 390px;
 }
 header .shop-cart .item{
+    position: relative;
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    margin-left: 5%;
+    margin: 5% 0;
+    justify-content: space-around;
+    
 }
 
 header .shop-cart .item img{
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-right: 5%;
+    width: 72px;
+    height: 72px;
+    margin:0 5%;
     
 }
-header .shop-cart .item p{
-
+header .shop-cart .item b{
+    font-size: 24px;
+    margin-left: 10%;
+    font-weight: 600;
+    width: 30%;
 }
-
-
-
-
-
+header .shop-cart .item h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 5%;
+    width: 25%;
+}
 
 
 main {
@@ -171,6 +181,16 @@ main .user {
     background-color: #252525;
     padding: 20px;
 }
+.user .user-item{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+.user .user-item img{
+    width: 100px;
+    height: 100px;
+}
+
 
 .action-icons {
     display: block;
@@ -300,7 +320,7 @@ form button:hover {
 
 .items p,
 .items b,
-.item h2 {
+.items h2 {
     margin: 4% 4%;
     color: #e7e7e7;
 

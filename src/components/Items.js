@@ -11,7 +11,7 @@ class Items extends React.Component {
                         <Item key={item.id} item={item} onAddToOrder={onAddToOrder} />
                     ))
                 ) : (
-                    <div className="item">
+                    <div className="items">
                         <h3>There are not any items</h3>
                     </div>
                 )}
