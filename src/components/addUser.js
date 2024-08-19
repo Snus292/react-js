@@ -20,7 +20,7 @@ class AddUser extends React.Component {
 
     render() {
         return (//функция с параметром тегом и ссылкой на формы
-            <form ref={(element) => this.myForm = element}>
+            <form ref={(el) => this.myForm = el}>
                 <input id="first_name" name="first_name"  placeholder="First name" type="text" onChange={(e) => this.setState({ first_name: e.target.value })}></input>
                 <input id="last_name" name="last_name"  placeholder="Last name" type="text" onChange={(e) => this.setState({ last_name: e.target.value })}></input>
                 <input id="email" name="email"  placeholder="Email" type="text" onChange={(e) => this.setState({ email: e.target.value })}></input>

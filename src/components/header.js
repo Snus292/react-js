@@ -39,7 +39,7 @@ class Header extends React.Component {
         return (
             <div>
                 {this.props.orders.map((el) => (
-                    <Order key={el.id} item={el} />
+                    <Order key={el.id} item={el} onDeleteOrder={this.props.onDeleteOrder} />
                 ))}
             </div>
         );

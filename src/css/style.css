@@ -114,7 +114,7 @@ header .nav ul li:hover {
 
 .account-nav .account-button:hover,
 .account-nav .account-button.active {
-    color: #ff0000;
+    color: #ff0000df;
     transform: scale(1.2);
 }
 header .shop-cart{
@@ -157,9 +157,23 @@ header .shop-cart .item h2{
     margin-left: 5%;
     width: 25%;
 }
-header .shop-cart .empty h3{
-    
+header .shop-cart .item .delete-item{
+    color: black;
+    height: auto;
+    width: 20px;
+    float: left;
+    position: relative;
+    top: 75%;
+    cursor: pointer;
+    transform: scale(1.2);
 }
+header .shop-cart .item .delete-item:hover{
+    color: #ff0000df;
+    transform: scale(1.2);
+}
+/* header .shop-cart .empty h4{
+    
+} */
 
 
 main {

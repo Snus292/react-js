@@ -72,10 +72,11 @@ class App extends React.Component {
         this.deleteUser = this.deleteUser.bind(this)
         this.editUser = this.editUser.bind(this)
         this.addToOrder = this.addToOrder.bind(this)
+        this.deleteOrder = this.deleteOrder.bind(this)
     }
     render() {
         return (<div className="page-wrapper">
-            <Header orders={this.state.orders}></Header>
+            <Header orders={this.state.orders} onDeleteOrder={this.deleteOrder}></Header>
             <div className="container">
                 <aside>
                     <AddUser onAdd={this.addUser} ></AddUser>
@@ -99,17 +100,21 @@ class App extends React.Component {
     }
     addToOrder(item) {
         let isInArray = false
+        
         this.state.orders.forEach(el => {
             if (el.id === item.id)
                 isInArray = true
         })
         if (!isInArray)
-            this.setState({ orders: [...this.state.orders, item] }
-                // , () => {
-                //     console.log(this.state.orders)
-                // }
+            this.setState({ orders: [...this.state.orders, item] }, () => {
+                    console.log(this.state.orders)
+                }
             )
 
+    }
+    deleteOrder(id){
+        this.setState({
+            orders: this.state.orders.filter(el=>el.id!==id)})
     }
 
 
