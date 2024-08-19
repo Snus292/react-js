@@ -18,9 +18,9 @@ class App extends React.Component {
         })
 
         this.state = {
-            orders:[],
+            orders: [],
 
-            users:[],
+            users: [],
 
             items: [
                 {
@@ -97,16 +97,18 @@ class App extends React.Component {
 
         </div>)
     }
-    addToOrder(item){
+    addToOrder(item) {
         let isInArray = false
-        this.state.orders.forEach(el=>{
-            if(el.id === item.id)
+        this.state.orders.forEach(el => {
+            if (el.id === item.id)
                 isInArray = true
         })
-        if(!isInArray)
-        this.setState({orders:[...this.state.orders, item]},()=>{
-            console.log(this.state.orders)
-        })
+        if (!isInArray)
+            this.setState({ orders: [...this.state.orders, item] }
+                // , () => {
+                //     console.log(this.state.orders)
+                // }
+            )
 
     }
 
