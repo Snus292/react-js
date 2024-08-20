@@ -5,6 +5,7 @@ import Users from "./components/Users";
 import AddUser from "./components/AddUser";
 import Items from "./components/Items";
 import axios from "axios";
+import Categories from "./components/Categories";
 
 
 const baseUrl = "https://reqres.in/api/users?page=1"
@@ -52,7 +53,7 @@ class App extends React.Component {
                     title: "Stylish Lamp",
                     img: "lamp-stylish.jpg",
                     desc: "Add a touch of elegance to your room with this stylish lamp. Features a modern design and provides warm ambient lighting.",
-                    category: "lamps",
+                    category: "lighting",
                     price: "39.99"
                 },
                 {
@@ -60,7 +61,7 @@ class App extends React.Component {
                     title: "Office Desk",
                     img: "desk-office.jpg",
                     desc: "A sturdy office desk with ample workspace, designed for productivity and comfort. Comes with built-in storage drawers.",
-                    category: "desks",
+                    category: "tables",
                     price: "149.99"
                 }
             ]
@@ -80,6 +81,7 @@ class App extends React.Component {
             <div className="container">
                 <aside>
                     <AddUser onAdd={this.addUser} ></AddUser>
+                    <Categories></Categories>
 
                 </aside>
                 <main>
