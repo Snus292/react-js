@@ -205,7 +205,8 @@ header .shop-cart .subtotal{
     margin: 5% 0%;
     opacity: 1;
  }
- .categories li:hover, .categories li.active{
+ .categories li:hover{
+    font-weight: 800;
     opacity: 1.1;
     background-color:#252525;
     box-shadow: 0px 5px  10px rgba(255, 255, 0, 0.098);

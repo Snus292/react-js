@@ -21,6 +21,8 @@ class App extends React.Component {
         this.state = {
             orders: [],
 
+            currentItems: [],
+
             users: [],
 
             items: [
@@ -68,12 +70,14 @@ class App extends React.Component {
 
         }
 
-
+        this.state.currentItems = this.state.items
         this.addUser = this.addUser.bind(this)
         this.deleteUser = this.deleteUser.bind(this)
         this.editUser = this.editUser.bind(this)
         this.addToOrder = this.addToOrder.bind(this)
         this.deleteOrder = this.deleteOrder.bind(this)
+        this.chooseCategory = this.chooseCategory.bind(this)
+
     }
     render() {
         return (<div className="page-wrapper">
@@ -81,7 +85,7 @@ class App extends React.Component {
             <div className="container">
                 <aside>
                     <AddUser onAdd={this.addUser} ></AddUser>
-                    <Categories></Categories>
+                    <Categories chooseCategory={this.chooseCategory}></Categories>
 
                 </aside>
                 <main>
@@ -90,7 +94,7 @@ class App extends React.Component {
                     </div>
 
                     <div>
-                        <Items items={this.state.items} onAddToOrder={this.addToOrder}></Items>
+                        <Items items={this.state.currentItems} onAddToOrder={this.addToOrder}></Items>
 
 
                     </div>
@@ -102,21 +106,32 @@ class App extends React.Component {
     }
     addToOrder(item) {
         let isInArray = false
-        
+
         this.state.orders.forEach(el => {
             if (el.id === item.id)
                 isInArray = true
         })
         if (!isInArray)
             this.setState({ orders: [...this.state.orders, item] }, () => {
-                    console.log(this.state.orders)
-                }
+                console.log(this.state.orders)
+            }
             )
 
     }
-    deleteOrder(id){
+    deleteOrder(id) {
         this.setState({
-            orders: this.state.orders.filter(el=>el.id!==id)})
+            orders: this.state.orders.filter(el => el.id !== id)
+        })
+    }
+
+    chooseCategory(category) {
+        if(category=== "all"){
+            this.setState({currentItems:this.state.items})
+            return
+        }
+        this.setState({
+            currentItems: this.state.items.filter(el => el.category === category)
+        })
     }
 
 
