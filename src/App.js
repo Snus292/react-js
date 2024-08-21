@@ -6,6 +6,7 @@ import AddUser from "./components/AddUser";
 import Items from "./components/Items";
 import axios from "axios";
 import Categories from "./components/Categories";
+import FullItem from "./components/FullItem";
 
 
 const baseUrl = "https://reqres.in/api/users?page=1"
@@ -22,6 +23,10 @@ class App extends React.Component {
             orders: [],
 
             currentItems: [],
+
+            fullItem: false,
+
+            fullItems: {},
 
             users: [],
 
@@ -77,6 +82,7 @@ class App extends React.Component {
         this.addToOrder = this.addToOrder.bind(this)
         this.deleteOrder = this.deleteOrder.bind(this)
         this.chooseCategory = this.chooseCategory.bind(this)
+        this.onShowItem = this.onShowItem.bind(this)
 
     }
     render() {
@@ -94,12 +100,18 @@ class App extends React.Component {
                     </div>
 
                     <div>
-                        <Items items={this.state.currentItems} onAddToOrder={this.addToOrder}></Items>
+                        <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAddToOrder={this.addToOrder}></Items>
 
 
                     </div>
+                    <div>
+
+
+                        {this.state.fullItem && <FullItem onAddToOrder={this.addToOrder} onShowItem={this.onShowItem}  item={this.state.fullItems}></FullItem>}
+                    </div>
                 </main>
             </div>
+
             <Footer></Footer>
 
         </div>)
@@ -125,13 +137,18 @@ class App extends React.Component {
     }
 
     chooseCategory(category) {
-        if(category=== "all"){
-            this.setState({currentItems:this.state.items})
+        if (category === "all") {
+            this.setState({ currentItems: this.state.items })
             return
         }
         this.setState({
             currentItems: this.state.items.filter(el => el.category === category)
         })
+    }
+    onShowItem(item) {
+        this.setState({ fullItems: item })
+        //меняет состояние showFullItem на противоположное
+        this.setState({ fullItem: !this.state.fullItem })
     }
 
 

@@ -63,12 +63,14 @@ header .nav {
     display: flex;
     float: left;
     margin-left: auto;
-    
+
 }
-header .logo{
+
+header .logo {
     width: 64px;
     height: 64px;
 }
+
 header .header-links {
     margin-right: 5%;
     float: right;
@@ -91,14 +93,17 @@ header .nav ul li:hover {
     opacity: 0.5;
 
 }
-.account-nav{
+
+.account-nav {
     display: flex;
 }
-.account-nav{
-    
+
+.account-nav {
+
     margin: 0 5%;
 }
-.account-nav .nav-link{
+
+.account-nav .nav-link {
     padding: 10px;
 }
 
@@ -117,47 +122,52 @@ header .nav ul li:hover {
     color: #ff0000df;
     transform: scale(1.2);
 }
-header .shop-cart{
+
+header .shop-cart {
     position: absolute;
     top: 100%;
     right: 0;
     width: 30%;
-    min-height:100px;
+    min-height: 100px;
     background-color: #525252;
-    box-shadow:3px 7px 7px rgb(0, 0, 0);
+    box-shadow: 3px 7px 7px rgb(0, 0, 0);
     z-index: 100;
     padding: 20px;
     min-width: 390px;
 }
-header .shop-cart .item{
+
+header .shop-cart .item {
     position: relative;
     display: flex;
     flex-direction: row;
     width: 100%;
     margin: 5% 0;
     justify-content: space-around;
-    
+
 }
 
-header .shop-cart .item img{
+header .shop-cart .item img {
     width: 72px;
     height: 72px;
-    margin:0 5%;
-    
+    margin: 0 5%;
+
 }
-header .shop-cart .item b{
+
+header .shop-cart .item b {
     font-size: 24px;
     margin-left: 10%;
     font-weight: 600;
     width: 30%;
 }
-header .shop-cart .item h2{
+
+header .shop-cart .item h2 {
     font-size: 20px;
     font-weight: 700;
     margin-left: 5%;
     width: 25%;
 }
-header .shop-cart .item .delete-item{
+
+header .shop-cart .item .delete-item {
     color: black;
     height: auto;
     width: 20px;
@@ -167,12 +177,13 @@ header .shop-cart .item .delete-item{
     cursor: pointer;
     transform: scale(1.2);
 }
-header .shop-cart .item .delete-item:hover{
-    color:#ff0000df;
+
+header .shop-cart .item .delete-item:hover {
+    color: #ff0000df;
     transform: scale(1.2);
 }
 
-header .shop-cart .subtotal{
+header .shop-cart .subtotal {
     float: left;
     width: 100%;
     font-weight: 700;
@@ -180,22 +191,23 @@ header .shop-cart .subtotal{
     font-size: large;
 
 }
+
 /* header .shop-cart .empty h4{
     
 } */
- .categories{
+.categories {
     margin-top: 25%;
     display: flex;
     max-height: 300px;
     max-width: 260px;
     overflow: auto;
-    
- }
+
+}
 
 
- .categories li{
-    display:  inline-block;
-    
+.categories li {
+    display: inline-block;
+
     border-radius: 40px;
     padding: 5% 10%;
     cursor: pointer;
@@ -204,13 +216,14 @@ header .shop-cart .subtotal{
     font-weight: 700;
     margin: 5% 0%;
     opacity: 1;
- }
- .categories li:hover{
+}
+
+.categories li:hover {
     font-weight: 800;
     opacity: 1.1;
-    background-color:#252525;
-    box-shadow: 0px 5px  10px rgba(255, 255, 0, 0.098);
- }
+    background-color: #252525;
+    box-shadow: 0px 5px 10px rgba(255, 255, 0, 0.098);
+}
 
 
 
@@ -237,12 +250,14 @@ main .user {
     background-color: #252525;
     padding: 20px;
 }
-.user .user-item{
+
+.user .user-item {
     display: flex;
     position: relative;
     flex-direction: column;
 }
-.user .user-item img{
+
+.user .user-item img {
     width: 100px;
     height: 100px;
 }
@@ -347,7 +362,8 @@ form button:hover {
 
 }
 
-.items .item {
+.items .item,
+.full-item {
     position: relative;
     display: flex;
     width: 29%;
@@ -360,28 +376,39 @@ form button:hover {
 
 }
 
-.items .item img {
-    width: 100%;
+.items .item img,
+.full-item img {
+    max-height: 200px;
     border-radius: 10px 10px 0 0;
-    height: 200px;
+    width: 100%;
     position: relative;
     transition: transform 500ms ease-in;
+    cursor: pointer;
 
 }
 
-.items .item img:hover {
+.items .item img:hover,
+.full-item img:hover {
     transform: scale(1.05);
 
 }
 
-.items p,
-.items b,
-.items h2 {
+.item p,
+.full-item p,
+.item b,
+.full-item b,
+.item h2,
+.full-item h2 {
     margin: 4% 4%;
     color: #e7e7e7;
 
 }
 
+.item h2 {
+    cursor: pointer;
+}
+
+.full-item .add-to-cart,
 .item .add-to-cart {
     position: relative;
     background-color: #b6e2ff63;
@@ -399,6 +426,7 @@ form button:hover {
 
 }
 
+.full-item .add-to-cart:hover,
 .item .add-to-cart:hover {
     transform: scale(1.1) translateY(-3px);
     transition: transform 500ms ease;
