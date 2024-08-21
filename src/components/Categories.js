@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
 export class Categories extends Component {
     constructor(props) {
@@ -31,10 +31,12 @@ export class Categories extends Component {
     }
     render() {
         return (
-            <div className='categories'>
-                {this.state.categories.map(el=>(
-                    <div key={el.key}>{el.name}</div>
-                ))}
+            <div className="categories" >
+                <ul className="list-unstyled">
+                    {this.state.categories.map(el => (
+                        <li key={el.key}>{el.name}</li>
+                    ))}
+                </ul>
             </div>
         )
     }
