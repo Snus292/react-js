@@ -3,24 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineHexagon } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import Order from "./Order";
-
-//       Вариант с оставление методов вне класса Header 
-// const showOrders = (props) => {
-//     return (<div>
-//         {props.orders.map(el => (
-//             <Order key={el.id} item={el}></Order>
-//         ))}
-
-
-//     </div>)
-// }
-
-// const showNothing = (props) => {
-//     return (<div className="empty">
-//         <h4>There are not any products</h4>
-
-//     </div>)
-// }
+import { Link } from "react-router-dom";
 
 class Header extends React.Component {
     constructor(props) {
@@ -49,7 +32,7 @@ class Header extends React.Component {
                 </div>
             </div>
         );
-    }
+    }   
 
     showNothing() {
         return (
@@ -70,11 +53,11 @@ class Header extends React.Component {
                     </a>
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" className="nav-link px-2 text-secondary">Home</a></li>
-                        <li><a href="#" className="nav-link px-2 text-white">Features</a></li>
-                        <li><a href="#" className="nav-link px-2 text-white">Pricing</a></li>
-                        <li><a href="#" className="nav-link px-2 text-white">FAQs</a></li>
-                        <li><a href="#" className="nav-link px-2 text-white">About</a></li>
+                        <li><Link to="/" className="nav-link px-2 text-secondary">Home</Link></li>
+                        <li><Link to="/features" className="nav-link px-2 text-white">Features</Link></li>
+                        <li><Link to="/pricing" className="nav-link px-2 text-white">Pricing</Link></li>
+                        <li><Link to="/faqs" className="nav-link px-2 text-white">FAQs</Link></li>
+                        <li><Link to="/about" className="nav-link px-2 text-white">About</Link></li>
                     </ul>
 
                     <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Users from "./components/Users";
@@ -7,6 +8,13 @@ import Items from "./components/Items";
 import axios from "axios";
 import Categories from "./components/Categories";
 import FullItem from "./components/FullItem";
+import Home from "./pages/Home";
+import Features from "./pages/Features";
+import Pricing from "./pages/Pricing";
+import FAQs from "./pages/FAQs";
+import About from "./pages/About";
+import Shop from "./pages/Shop";
+import UsersM from "./pages/UsersM";
 
 
 const baseUrl = "https://reqres.in/api/users?page=1"
@@ -86,35 +94,46 @@ class App extends React.Component {
 
     }
     render() {
-        return (<div className="page-wrapper">
-            <Header orders={this.state.orders} onDeleteOrder={this.deleteOrder}></Header>
-            <div className="container">
-                <aside>
-                    <AddUser onAdd={this.addUser} ></AddUser>
-                    <Categories chooseCategory={this.chooseCategory}></Categories>
+        return (
+            <Router>
+                <div className="page-wrapper">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/features" element={<Features />} />
+                        <Route path="/pricing" element={<Pricing />} />
+                        <Route path="/faqs" element={<FAQs />} />
+                        <Route path="/about" element={<About />} />
+                    </Routes>
+                    <Header orders={this.state.orders} onDeleteOrder={this.deleteOrder}></Header>
+                    <div className="container">
+                        <aside>
+                            <AddUser onAdd={this.addUser} ></AddUser>
+                            <Categories chooseCategory={this.chooseCategory}></Categories>
 
-                </aside>
-                <main>
-                    <div>
-                        <Users users={this.state.users} onDelete={this.deleteUser} onEdit={this.editUser}></Users>
+                        </aside>
+                        <main>
+                            <div>
+                                <Users users={this.state.users} onDelete={this.deleteUser} onEdit={this.editUser}></Users>
+                            </div>
+
+                            <div>
+                                <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAddToOrder={this.addToOrder}></Items>
+
+
+                            </div>
+                            <div>
+
+
+                                {this.state.fullItem && <FullItem onAddToOrder={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItems}></FullItem>}
+                            </div>
+                        </main>
                     </div>
 
-                    <div>
-                        <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAddToOrder={this.addToOrder}></Items>
+                    <Footer></Footer>
 
-
-                    </div>
-                    <div>
-
-
-                        {this.state.fullItem && <FullItem onAddToOrder={this.addToOrder} onShowItem={this.onShowItem}  item={this.state.fullItems}></FullItem>}
-                    </div>
-                </main>
-            </div>
-
-            <Footer></Footer>
-
-        </div>)
+                </div>
+            </Router>
+        )
     }
     addToOrder(item) {
         let isInArray = false

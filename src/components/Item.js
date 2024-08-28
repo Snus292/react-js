@@ -1,8 +1,10 @@
 import React from "react";
 
 
+
 class Item extends React.Component {
     render() {
+        
         return (
             <div className="item" >
                 <img src={"./img/" + this.props.item.img} alt="" onClick={() => this.props.onShowItem(this.props.item)} />

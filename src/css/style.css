@@ -131,7 +131,7 @@ header .shop-cart {
     min-height: 100px;
     background-color: #525252;
     box-shadow: 3px 7px 7px rgb(0, 0, 0);
-    z-index: 100;
+    z-index: 10;
     padding: 20px;
     min-width: 390px;
 }
@@ -362,8 +362,7 @@ form button:hover {
 
 }
 
-.items .item,
-.full-item {
+.items .item {
     position: relative;
     display: flex;
     width: 29%;
@@ -372,20 +371,65 @@ form button:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     overflow: hidden;
-
+    color: #e7e7e7;
 
 }
+
+.full-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000ce;
+    z-index: 11;
+    overflow: hidden;
+}
+
+.full-item .full-item-content {
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: space-between;
+    width: 600px;
+    position: relative;
+    margin: 3% auto;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    color: #000000;
+    overflow: hidden;
+    
+
+}
+
+.full-item-content .full-item-header {
+  display: block;
+  position:absolute;
+  z-index: 20;
+  right: 0;
+  top: 0;
+  padding: 10px;
+}
+
 
 .items .item img,
 .full-item img {
-    max-height: 200px;
     border-radius: 10px 10px 0 0;
-    width: 100%;
     position: relative;
     transition: transform 500ms ease-in;
     cursor: pointer;
-
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    
+    
 }
+.full-item img {
+    height: 600px;
+}
+.items .item img{
+    height: 200px;
+}
+
 
 .items .item img:hover,
 .full-item img:hover {
@@ -400,11 +444,11 @@ form button:hover {
 .item h2,
 .full-item h2 {
     margin: 4% 4%;
-    color: #e7e7e7;
 
 }
 
-.item h2 {
+.item h2,
+.full-item h2 {
     cursor: pointer;
 }
 
