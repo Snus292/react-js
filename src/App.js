@@ -58,7 +58,7 @@ class App extends React.Component {
                 }
             ]
         };
-           
+
         this.addToOrder = this.addToOrder.bind(this);
         this.deleteOrder = this.deleteOrder.bind(this);
     }
@@ -88,17 +88,18 @@ class App extends React.Component {
                 <div className="page-wrapper">
                     <Header orders={this.state.orders} onDeleteOrder={this.deleteOrder} />
                     <div className="container">
-                        <main>
-                            <Routes>
-                                <Route path="/" element={<Home />} />
-                                <Route path="/features" element={<Features />} />
-                                <Route path="/pricing" element={<Pricing />} />
-                                <Route path="/faqs" element={<FAQs />} />
-                                <Route path="/about" element={<About />} />
-                                <Route path="/userm" element={<UserM />} />
-                                <Route path="/shopm" element={<ShopM items={this.state.items} addToOrder={this.addToOrder} />} />
-                            </Routes>
-                        </main>
+
+
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/features" element={<Features />} />
+                            <Route path="/pricing" element={<Pricing />} />
+                            <Route path="/faqs" element={<FAQs />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/userm" element={<UserM />} />
+                            <Route path="/shopm" element={<ShopM items={this.state.items} addToOrder={this.addToOrder} />} />
+                        </Routes>
+
                     </div>
                     <Footer />
                 </div>

@@ -45,11 +45,16 @@ export class UserM extends Component {
 
 	render() {
 		return (
-			<div>
+			<><aside>
 				<AddUser onAdd={this.addUser} />
-				<Users users={this.state.users} onDelete={this.deleteUser} onEdit={this.editUser} />
-			</div>
-		);
+
+			</aside>
+				<main>
+
+					<Users users={this.state.users} onDelete={this.deleteUser} onEdit={this.editUser} />
+				</main></>
+
+		)
 	}
 }
 
