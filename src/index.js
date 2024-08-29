@@ -7,4 +7,4 @@ import "./css/style.css"
 const app = createRoot(document.getElementById("app"))
 // const app = ReactDOMClient.createRoot(document.getElementById("app"))
 
-app.render(<App />)  
+app.render(<App />) 

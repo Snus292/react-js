@@ -39,7 +39,7 @@ body {
 }
 
 .header {
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     align-items: center;
 
 }
@@ -309,14 +309,19 @@ form button {
     display: block;
     width: 70%;
     padding: 4% 7%;
-    margin: 4% 2%;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     font-size: 15px;
     background-color: #949494;
     transform: scale(1);
+    color: #000000;
+}
+form label{
+    color: #000000b7;
+}
 
-
+form .form-floating textarea{
+    min-height: 100px;
 }
 
 form button {
@@ -477,4 +482,7 @@ form button:hover {
 .item .add-to-cart:hover {
     transform: scale(1.1) translateY(-3px);
     transition: transform 500ms ease;
+}
+form .div{
+    text-align: center;
 }

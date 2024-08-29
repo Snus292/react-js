@@ -87,7 +87,7 @@ class App extends React.Component {
             <Router>
                 <div className="page-wrapper">
                     <Header orders={this.state.orders} onDeleteOrder={this.deleteOrder} />
-                    <div className="container">
+                    <div className="container-xxl">
 
 
                         <Routes>
