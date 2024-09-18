@@ -99,15 +99,48 @@ header .nav ul li:hover {
 
 .account-nav {
     display: flex;
-}
-
-.account-nav {
-
     margin: 0 5%;
 }
 
-.account-nav .nav-link {
-    padding: 10px;
+
+
+.nav-link {
+    
+    
+}
+.vertical-nav{
+    max-width:200px;
+    
+}
+.navbar-heading {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-size: .625rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+.vertical-nav-scroll{
+    max-height: 600px;
+    overflow-x: auto;
+}
+.vertical-nav-scroll li .btn{
+    width: 170px;
+    display: flex;
+    justify-content: space-between
+
+    
+
+    
+}
+
+.vertical-nav-scroll .dropdown-toggle::after{
+    margin-top:auto;
+    margin-bottom: auto;
+    display: inline;
+    
+    
+    
+    
 }
 
 
