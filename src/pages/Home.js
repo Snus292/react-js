@@ -4,7 +4,7 @@ import CreateProject from '../components/CreateProject'
 export class Home extends Component {
 	render() {
 		return (
-			<><aside className='vertical-nav'>
+			<><aside className='vertical-nav col-2'>
 
 				<div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
 					<a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -160,15 +160,15 @@ export class Home extends Component {
 			</aside>
 
 				<main>
-					<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-						<div className="container-fluid">
+					<nav className="navbar navbar-expand-lg navbar-dark p-3 flex-column">
+						<div className="container-fluid col-11 px-4">
 							<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
 								<span className="navbar-toggler-icon"></span>
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
 								<ul className="navbar-nav">
 									<li className="nav-item dropdown">
-										<button className="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										<button className="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 											Dashboards
 										</button>
 										<ul className="dropdown-menu dropdown-menu-dark">
@@ -178,7 +178,7 @@ export class Home extends Component {
 										</ul>
 									</li>
 									<li className="nav-item dropdown">
-										<button className="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										<button className="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 											Apps
 										</button>
 										<ul className="dropdown-menu dropdown-menu-dark">
@@ -188,7 +188,7 @@ export class Home extends Component {
 										</ul>
 									</li>
 									<li className="nav-item dropdown">
-										<button className="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										<button className="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 											Pages
 										</button>
 										<ul className="dropdown-menu dropdown-menu-dark">
@@ -198,7 +198,7 @@ export class Home extends Component {
 										</ul>
 									</li>
 									<li className="nav-item dropdown">
-										<button className="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										<button className="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 											Components
 										</button>
 										<ul className="dropdown-menu dropdown-menu-dark">
@@ -210,8 +210,13 @@ export class Home extends Component {
 
 								</ul>
 							</div>
+						
+							
 						</div>
+						<hr></hr>
+						
 					</nav>
+					
 
 					<CreateProject></CreateProject>
 

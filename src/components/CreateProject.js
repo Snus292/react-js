@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 export class CreateProject extends Component {
     render() {
         return (
-            <div className="row">
-                <div className="col-12">
+            <div className="row d-flex justify-content-center">
+                <div className="col-10">
                     <form className="g-3 mb-6 row ">
                         <div className="col-md-8 col-sm-6">
                             <div className="form-floating">
@@ -82,9 +82,9 @@ export class CreateProject extends Component {
                                 <option defaultValue="3">Client Three</option>
                             </select><label htmlFor="floatingSelectClient">Client</label></div>
                         </div>
-                        <div className="gy-6 col-md-6">
-                            <div className="form-floating"><input placeholder="Budget" type="text" id="floatingInputBudget"
-                                className="form-control" /><label htmlFor="floatingInputBudget">Budget</label></div>
+                        <div className="gy-6 col-md-2 my-auto mx-4">
+                            <div className="form-floating"><input placeholder="Budget" type="number" id="floatingInputBudget"
+                                className="form-control" /><label htmlFor="floatingInputBudget">Budget $</label></div>
                         </div>
 
                         <div className="gy-6 col-12">

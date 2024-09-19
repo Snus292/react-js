@@ -109,7 +109,7 @@ header .nav ul li:hover {
     
 }
 .vertical-nav{
-    max-width:200px;
+    max-width:250px;
     
 }
 .navbar-heading {
@@ -123,8 +123,11 @@ header .nav ul li:hover {
     max-height: 600px;
     overflow-x: auto;
 }
+.vertical-nav-scroll li{
+    width: 100%;
+}
 .vertical-nav-scroll li .btn{
-    width: 170px;
+    width: 100%;
     display: flex;
     justify-content: space-between
 
@@ -262,13 +265,17 @@ header .shop-cart .subtotal {
 }
 
 
-
+hr{
+    width: 100%;
+}
 
 main {
     position: relative;
     width: 70%;
     float: left;
     height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
